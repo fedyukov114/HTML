@@ -1,0 +1,14 @@
+table{
+	border-collapse: separate;
+	border-spacing: 30px 21px;
+	text-align:left;
+}
+
+.first{
+	border-bottom-style: solid;
+	border-bottom-color: blue;
+	color:blue;
+}
+th{
+	color: #77a1b5;
+}

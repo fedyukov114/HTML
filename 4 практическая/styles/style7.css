@@ -1,0 +1,30 @@
+.a {
+    width: 150px;
+    height: 50px;
+    border: 4px solid #000;
+    margin-bottom: 10px;
+    position: relative;
+}
+   .a::before, .a::after {
+    content: '';
+    position: absolute;
+}
+   .a::after { 
+    width: 10px;
+    height: 20px;
+    background: #000;
+    right: -10px; top: 15px;
+}
+   .a::before { height: 50px; }
+   .red::before {
+    width: 50px;
+    background: #ED1C24;
+}
+   .yellow::before {
+    width: 100px;
+    background: #FFC60B;
+}
+   .green::before {
+    width: 150px;
+    background: #00A055;
+}

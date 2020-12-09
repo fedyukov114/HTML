@@ -1,0 +1,20 @@
+.root {
+	vertical-align: middle;
+	border-top: 2px solid;
+	border-left: 2px solid;
+	transform: skew(-15deg);
+	position: relative;
+}
+
+.root:before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	height: 40%;
+	width: 9px;
+	left: -11px;
+	border-top: 2px solid;
+	border-right: 2px solid;
+	transform: skew(30deg);
+	transform-origin: bottom right;
+}

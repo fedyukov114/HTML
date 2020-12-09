@@ -1,0 +1,55 @@
+.rot:hover {
+	transform: rotate3d(1, 1, 0, 180deg);
+}
+
+.rot{
+	border: 2px dashed red;
+	width: 100px;
+	height: 50px;
+	transition: transform 3s linear;
+}
+
+.degr:hover {
+	transform: skewX(45deg);
+}
+
+.degr{
+	border: 2px dashed red;
+	width: 100px;
+	height: 50px;
+	transition: transform 3s linear;
+}
+
+.sdvig:hover {
+	transform: translateX(20px);
+}
+
+.sdvig{
+	border: 2px dashed red;
+	width: 100px;
+	height: 50px;
+	transition: transform 3s linear;
+}
+.mash:hover {
+	transform:scale(2, 2);
+}
+
+.mash{
+	margin: 20px;
+	border: 2px dashed red;
+	width: 100px;
+	height: 50px;
+	transition: transform 3s linear;
+}
+.what:hover {
+	transform: scale(2, 2)
+	rotate3d(1,1,0,180deg);
+}
+
+.what{
+	margin: 20px;
+	border: 2px dashed red;
+	width: 100px;
+	height: 50px;
+	transition: transform 3s linear;
+}

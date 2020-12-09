@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<HTML>
+ <head>
+  <meta charset="utf-8">
+  <title>Форма</title>
+  <style>
+  input[type="number"]:valid + span:after ,
+   input[type="text"]:valid + span::after {
+   background-image:url(1.jpg);
+    background-size: 15px 15px;
+	background-repeat: no-repeat;
+	padding-left: 50px;
+    width: 50px; 
+    height: 40px;
+    content:"";
+   }
+   input[type="number"]:invalid + span:after,
+   input[type="text"]:invalid + span::after {
+	background-image:url(2.png);
+    background-size: 15px 15px;
+	background-repeat: no-repeat;
+	padding-left: 50px;
+    width: 50px; 
+    height: 40px;
+    content:"";
+	}
+	input[type="checkbox"]:checked + span {
+	background-color: yellow;
+	}
+ </style>
+ </head>
+ <body>
+	<form>
+		<h1 align="center"> Анкета </h1>
+		<p>
+		<label  for="name">Имя пользователя</label>
+		<input  type="text" name="name" placeholder="Введите имя пользователя" required > <span></span>
+		</p>
+		<p><label  for="age"> Сколько вам лет?</label>
+		 <input   type="number" name="age" min="1" required placeholder="Введите возраст"><span></span></p>
+		<p><label  for="work">Вы учитесь или работаете?</label>
+		  <input  type="text" id="work" required  placeholder="Введите деятельность"><span></span></p>
+		<p><label  for="how_much">Сколько у вас свободного времени?</label>
+		 <input   type="text" id="how_much" required placeholder="Введите количество свободного врмени"><span></span></p>
+		<p><label  for="what">Что вы обычно делаете в свободное время?</label>
+		  <input type="text" id="what" placeholder="Введите как вы проводите свободное время"></p>
+		<p>
+		<label>Выберите</label><br>
+		<input type="checkbox" name="language" type="var1"><span>HTML</span><br>
+		<input type="checkbox" name="language" type="var2"><span>css</span><br>
+		<input type="checkbox" name="language" type="var3"><span>js</span><br>
+		<input type="checkbox" name="language" type="var4"><span>u</span>
+		</p>
+		<p><input type="submit" value="Отправить"></p>
+	</form>
+ </body>
+</HTML>

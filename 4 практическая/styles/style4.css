@@ -1,0 +1,37 @@
+.first{
+	color:purple;
+}
+.second{
+	text-decoration:underline;
+	text-decoration-color:purple;
+	text-decoration-style:wavy;
+}
+
+.third{
+	color:green;
+}
+
+.fourth{
+	color:green;
+	text-decoration:underline line-through;
+	text-decoration-color:greeb;
+	text-decoration-style:dashed;
+}
+.fifth{
+	color: red;
+}
+.sixth{
+	color:red;
+	text-decoration:overline;
+	text-decoration-color:red;
+	text-decoration-style:dotted;
+}
+.seventh{
+	color:blue;
+}
+.eighth{
+	color: blue;
+	text-decoration:underline;
+	text-decoration-color:blue;
+	text-decoration-style:double;
+}

@@ -1,0 +1,22 @@
+        body{
+			margin:0px auto;
+		}
+		.table{
+			float:left;
+			background:white;
+			margin:0 1px;
+		}
+		.table:hover{
+			box-shadow:0 0 10px rgba(0,0,0,0.5);
+		}
+		.header{
+			
+			font:15px serif;
+			color:black;
+			text-align:center;
+		}
+		.temperature{
+			background:white;
+			font:15px serif;
+			text-align: center;
+		}

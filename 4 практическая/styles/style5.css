@@ -1,0 +1,24 @@
+.table{
+	border: solid;
+	border-color: #00BFFF;
+	border-collapse: collapse;
+}
+th{
+	border-bottom: dashed;
+	border-color: #00BFFF;
+	border-width: 0.2mm;
+	padding: 20px;
+	text-align: left;
+	color: #000FFF;
+	background-color: rgba(0,191,255,0.3);
+}
+.IBM{
+	border-bottom-style: none;
+}
+
+tr:hover{
+	background-color: #00BFFF;
+}
+.company{
+	background-color:white;
+}

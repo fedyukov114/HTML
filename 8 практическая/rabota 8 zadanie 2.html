@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+function animate(options) {
+var start = performance.now();
+requestAnimationFrame(function animate(time) {
+// timeFraction от 0 до 1
+var timeFraction = (time - start) / options.duration;
+if (timeFraction > 1) timeFraction = 1;
+// текущее состояние анимации
+var progress = options.timing(timeFraction)
+options.draw(progress);
+if (timeFraction < 1) {
+requestAnimationFrame(animate);
+}
+});
+}
+</script>
+</head>
+<body>
+<textarea id="text" rows="4" cols="30">Вы бывали в тюрьме? Клетки. Клетки. Вас держат в клетке? Клетки. Клетки. Когда вы не исполняете обязанности, вас держат в коробке? Клетки. Связаны. Связаны. Что вы чувствуете, держа за руку того, кого любите? Связаны. Вас учили приставлять палец к пальцу?
+Связаны. Вы желаете связать с кем-нибудь сердце? Связаны. Вам снится связь с кем-либо? Связаны. Что вы чувствуете, держа в руках своего ребенка? Связаны. Вы чувствуете, что вам чего-то не хватает? Связаны. Клеток, связанных внутри.
+Клеток, связанных внутри. Повторите три раза. Клеток, связанных внутри. Клеток, связанных внутри. Клеток, связанных внутри.
+</textarea>
+<br>
+
+<button style="margin-left: 80px;" onclick="animateText(text)">Пуск</button>
+<script>
+function animateText(textArea) {
+let text = textArea.value;
+let to = text.length,
+from = 0;
+animate({
+duration: 8000,
+timing: bounce,
+draw: function(progress) {
+let result = (to - from) * progress + from;
+textArea.value = text.substr(0, Math.ceil(result))
+}
+});
+}
+function bounce(timeFraction) {
+for (let a = 0, b = 1, result; 1; a += b, b /= 2) {
+if (timeFraction >= (7 - 4 * a) / 11) {
+return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
+}
+}
+}
+</script>
+</body>
+</html>

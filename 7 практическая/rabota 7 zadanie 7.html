@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Задание 7 работа 7</title>
+	</head>
+	<body>
+	<p id="test">0</p>
+	<input type="submit" value="Нажмите на меня!" onclick="start()">
+	
+	<p id="test1">0</p>
+	<input type="submit" value="Запустить" onclick="start1()" id="start1">
+	<input type="submit" value="Остановить" onclick="stop1()" id="stop1" disabled>
+	
+	<body onload="go();go4()">
+	
+	<p id="clock">00:00:00</p>
+	
+	<div id="slider"><img style="width: 500px; height: 200px;" src=""></div>
+	
+	<img style="width: 200px; height: 100px;"src="pictures/igni.jpg" id="img1">
+	<img style="width: 200px; height: 100px;" src="pictures/Kto.jpg" id="img2">
+	<img style="width: 200px; height: 100px;" src="pictures/Pizza.jpg" id="img3">
+	<img style="width: 200px; height: 100px;" src="pictures/Pinguin.jpg" id="img4">
+	<img style="width: 200px; height: 100px;" src="pictures/Flower.jpg" id="img5">
+	<p><input type="submit" value="Запустить карусель!" onclick="start3()" id="go3">
+	<input type="submit" value="Остановить!" onclick="stop3()" id="stop3" disabled></p>
+	
+
+	<p>До полуночи осталось:</p>
+	<table border="1" cellpadding="0" cellspacing="0" >
+	<tr>
+	<th>Часы</th>
+	<th>Минуты</th>
+	<th>Секунды</th>
+	</tr>
+	<tr>
+	<td id="hours1"></td>
+	<td id="minutes1"></td>
+	<td id="seconds1"></td>
+	</tr>
+	</table>
+	<script>
+	function start() {
+	window.setInterval(timer, 500);
+	}	
+
+	function timer() {
+	var elem = document.getElementById('test');
+	test.innerHTML = parseInt(test.innerHTML)+1;
+	}
+	
+	function start1(){
+	window.timerId = window.setInterval(timer1, 500);
+	document.getElementById('start1').disabled = true;
+	document.getElementById('stop1').disabled = false;
+	}
+
+	function stop1(){
+	window.clearInterval(window.timerId);
+	document.getElementById('start1').disabled = false;
+	document.getElementById('stop1').disabled = true;
+	}
+	function timer1(){
+	var test = document.getElementById('test1');
+	test.innerHTML = parseInt(test.innerHTML)+1;
+	}
+	
+	function go(){
+	window.timerId = window.setInterval(timer2, 1000);
+	}
+	function timer2(){
+	var clock = document.getElementById('clock');
+	var date = new Date();
+	clock.innerHTML = addZero(date.getHours())+':'+addZero(date.getMinutes())+':'+addZero(date.getSeconds());
+	}
+	function addZero(num){
+	if(num <=9) return '0'+num;
+	else return num;
+	}
+	
+	var images = ['igni.jpg', 'Kto.jpg', 'Pizza.jpg', 'Pinguin.jpg', 'Flower.jpg'];
+
+	var slider = document.querySelector('#slider');
+	var img = document.querySelector('img');
+	var i = 1;
+	img.src = 'pictures/' + images[i];
+	window.setInterval(function () {
+	img.src = 'pictures/' + images[i];
+	i++;
+	if (i == images.length) {
+	i = 0;
+	}
+	}, 1000);
+	
+	function start3(){
+	window.timerId = window.setInterval(timer3, 1000);
+	document.getElementById('go3').disabled = true;
+	document.getElementById('stop3').disabled = false;
+	}
+	function timer3(){
+	var img1 = document.getElementById('img1');
+	var img2 = document.getElementById('img2');
+	var img3 = document.getElementById('img3');
+	var img4 = document.getElementById('img4');
+	var img5 = document.getElementById('img5');
+	var newImg = img1.src;
+	img1.src = img2.src;
+	img2.src = img3.src;
+	img3.src = img4.src;
+	img4.src = img5.src;
+	img5.src = newImg;
+	}
+	function stop3() {
+	window.clearInterval(window.timerId);
+	document.getElementById('go3').disabled = false;
+	document.getElementById('stop3').disabled = true;
+	}
+	
+	function go4(){
+	window.timerId = window.setInterval(timer4, 1000);
+	}
+	function timer4(){
+	var seconds = document.getElementById('seconds1');
+	var minutes = document.getElementById('minutes1');
+	var hours = document.getElementById('hours1');
+	var now = new Date();
+	var midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, 0, 0, 0);
+	var diff = Math.floor((midnight - now)/1000);
+	var hoursRemain = Math.floor(diff/(60*60));
+	var minutesRemain = Math.floor((diff-hoursRemain*60*60)/60);
+	var secondsRemain = Math.floor(diff%60);
+	hours.innerHTML = hoursRemain;
+	minutes.innerHTML = addZero1(minutesRemain);
+	seconds.innerHTML = addZero1(secondsRemain);
+	}
+	function addZero1(num){
+	if(num <=9) return '0'+num;
+	else return num;
+	}
+	</script>
+	</body>
+</html>

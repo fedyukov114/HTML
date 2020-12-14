@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Задание 6 работа 7</title>
+	</head>
+	<body>
+	<div style="display:flex;">
+	<div>
+	<p class = "test">Абзац с текстом</p>
+	<p class = "test">Абзац с текстом</p>
+	<p class = "test">Абзац с текстом</p>
+	<input type="submit" value="Нажмите на меня!" onclick="change()" id = "input">
+	</div>
+	<div>
+	<p class = "test1">Абзац с текстом</p>
+	<p class = "test1">Абзац с текстом</p>
+	<p class = "test1">Абзац с текстом</p>
+	<p class = "test1">Абзац с текстом</p>
+	<p class = "test1">Абзац с текстом</p>
+	<p class = "test1">Абзац с текстом</p>
+	<p class = "test1">Абзац с текстом</p>
+	<p class = "test1">Абзац с текстом</p>
+	<input type="submit" value="Нажмите на меня!" onclick="change1()" id = "input">
+	</div>
+	</div>
+		<script>
+			function change(){
+			var elems = document.querySelectorAll('p.test');
+			for (var i = 0; i < elems.length-1; i ++) {
+			elems[i].innerHTML = "Поменялся";
+			}
+			}
+			
+			function change1(){
+			var elems = document.querySelectorAll('p.test1');
+			for (var i = 0; i <= elems.length; i ++) {
+			elems[i].innerHTML = i + '. ' + elems[i].innerHTML;
+			}
+			}
+		</script>
+	</body>
+</html>

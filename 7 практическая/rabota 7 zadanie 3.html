@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Задание 3 работа 7</title>
+	</head>
+	<body>
+			<input type="text" value="Нажми на меня!" onfocus="go(this)">
+			<br>
+			<input type="submit" onclick="block(this)" value="Нажми на меня!" id="block">
+			<br>
+			<input type="submit" onclick="unblock('button')" value="Нажми чтобы отблокировать элемент" style="display: none;" id="unblock">
+			<br>
+			<input type="submit" onclick="num(this)" value="0">
+			<script>
+			function go(elem){
+			elem.value = 'текст новый';
+			}
+			
+			function block(){
+			var block = document.getElementById('block');
+			var unblock = document.getElementById('unblock');
+			block.value = 'О, теперь на меня больше не нажать!';
+			block.disabled = true;
+			unblock.style.display = 'block';
+			}
+			
+			function unblock(){
+			var block = document.getElementById('block');
+			var unblock = document.getElementById('unblock');
+			block.value = 'О, на меня снова можно нажимать!';
+			block.disabled = false;
+			unblock.style.display = 'none';
+			}
+			
+			function num(elem){
+			elem.value = parseInt(elem.value) + 1;
+			}
+			</script>
+	</body>
+</html>

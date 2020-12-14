@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Задание 2 работа 7</title>
+	</head>
+	<body>
+			
+			<button onclick="buttonClick()">Нажми на меня</button>
+			<input type="text" id="input" value="Хэй">
+			<p>
+			<button onclick="buttonClick1()">Нажми на меня</button>
+			<img id="foto" src="Kto.jpg" style="width: 150px; height: 150px;" >
+			</p>
+			<script>
+			function buttonClick() {
+			var input = document.getElementById('input');
+			input.value = 'Тебе показалось';
+			}
+			</script>
+			<script >
+			function buttonClick1() {
+			var img = document.getElementById('foto');
+			img.src = 'igni.jpg';
+			}
+			</script>
+	</body>
+</html>

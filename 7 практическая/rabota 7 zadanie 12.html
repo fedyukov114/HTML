@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Задание 12 работа 7</title>
+	</head>
+
+<body>
+
+  <ul class="tree" id="tree">
+    <li>Левая
+      <ul>
+        <li>Рука
+          <ul>
+            <li>Пальцы</li>
+            <li>5</li>
+            <li>Штук</li>
+          </ul>
+        </li>
+        <li>Нога
+          <ul>
+            <li>Пальцы</li>
+            <li>Может и меньше 5</li>
+            <li>Штук</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Правая
+      <ul>
+        <li>Рука
+          <ul>
+            <li>Пальцы</li>
+            <li>Ногти</li>
+          </ul>
+        </li>
+        <li>Нога
+          <ul>
+            <li>Есть и хорошо</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <script>
+    for (let li of tree.querySelectorAll('li')) {
+      var span = document.createElement('span');
+      li.prepend(span);
+      span.append(span.nextSibling); 
+    }
+
+
+    tree.onclick = function(event) {
+
+      if (event.target.tagName != 'SPAN') {
+        return;
+      }
+
+      var childrenContainer = event.target.parentNode.querySelector('ul');
+      if (!childrenContainer) return; 
+
+      childrenContainer.hidden = !childrenContainer.hidden;
+    }
+  </script>
+
+</body>
+</html>

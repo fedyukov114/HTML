@@ -1,0 +1,71 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+  <style>
+    body {
+      height: 2000px;
+    }
+
+    .tooltip {
+      position: fixed;
+      padding: 10px 20px;
+      border: 1px solid #b3c9ce;
+      text-align: center;
+      background: #9f9f9f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <p>Текст</p>
+  <p>А что за текст? Может быть подсказка поможет?</p>
+
+  <button data-tooltip="Нет, я не стану тебе помогать">Кнопка</button>
+  <button data-tooltip="А меня<br>две">Ещё кнопка</button>
+
+
+
+  <script>
+    var tooltipElem;
+
+    document.onmouseover = function(event) {
+      var target = event.target;
+
+
+      var tooltipHtml = target.dataset.tooltip;
+      if (!tooltipHtml) return;
+
+
+      tooltipElem = document.createElement('div');
+      tooltipElem.className = 'tooltip';
+      tooltipElem.innerHTML = tooltipHtml;
+      document.body.append(tooltipElem);
+
+      var coords = target.getBoundingClientRect();
+
+      var left = coords.left + (target.offsetWidth - tooltipElem.offsetWidth) / 2;
+      if (left < 0) left = 0; 
+
+      var top = coords.top - tooltipElem.offsetHeight - 5;
+      if (top < 0) { 
+        top = coords.top + target.offsetHeight + 5;
+      }
+
+      tooltipElem.style.left = left + 'px';
+      tooltipElem.style.top = top + 'px';
+    };
+
+    document.onmouseout = function(e) {
+
+      if (tooltipElem) {
+        tooltipElem.remove();
+        tooltipElem = null;
+      }
+
+    };
+  </script>
+
+</body>
+</html>
